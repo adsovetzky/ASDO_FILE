@@ -18,7 +18,7 @@ int main() {
   cin >> t;
   bool ok = false;
 
-  unordered_map<char, meow> mp;
+  map<char, meow> mp;
   vector<char> first_time;
 
   for (auto x : t) {
