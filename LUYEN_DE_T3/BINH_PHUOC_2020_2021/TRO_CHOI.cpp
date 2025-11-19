@@ -1,32 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 int main() {
-  long long n, m;
-  cin >> n >> m;
-  vector<long long> a(n * m), b, kq;
-  for (long long i = 0; i < m * n; i++) {
-    cin >> a[i];
+  ios_base::sync_with_stdio(false);
+  cin.tie(0);
+  // freopen("TROCHOI.INP", "r", stdin);
+  // freopen("TROCHOI.OUT", "w", stdout);
+  int m, n;
+  cin >> m >> n;
+  int mul = n * m;
+  vector<int> inp(mul);
+  for (int i = 0; i < mul; i++) {
+    cin >> inp[i];
   }
-  sort(a.begin(), a.end());
-  if (n == 1) {
-    for (long long x : a)
-      cout << x << " ";
-  } else {
-    long long d = 0, dem = 1;
-    for (long long i = 0; i < a.size(); i++) {
-      b.push_back(a[i]);
-      d++;
-      if (d == m) {
-        if (dem % 2 == 0) {
-          sort(b.begin(), b.end(), greater<long long>());
-        }
-        for (long long x : b)
-          cout << x << " ";
-        b.clear();
-        cout << endl;
-        dem++;
-        d = 0;
+  sort(inp.begin(), inp.end());
+  int temp = 0;
+  for (int i = 0; i < m; i++) {
+    if (i != 0)
+      cout << '\n';
+    if (i % 2 == 0) {
+      for (int j = 0; j < n; j++) {
+        cout << inp[temp + j] << ' ';
+      }
+
+    } else {
+      for (int j = n - 1; j >= 0; j--) {
+        cout << inp[temp + j] << ' ';
       }
     }
+    temp += n;
   }
 }
