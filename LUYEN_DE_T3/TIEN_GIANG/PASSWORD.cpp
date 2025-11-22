@@ -5,8 +5,8 @@ using namespace std;
 
 int main() {
 
-  freopen("PASSWORD.INP", "r", stdin);
-  freopen("PASSWORD.OUT", "w", stdout);
+  // freopen("PASSWORD.INP", "r", stdin);
+  // freopen("PASSWORD.OUT", "w", stdout);
 
   ios_base::sync_with_stdio(0);
   cin.tie(nullptr);
