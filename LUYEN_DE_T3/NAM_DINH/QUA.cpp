@@ -15,6 +15,8 @@ void sanguoc() {
   }
 }
 
+long long meow;
+long long dangphu, thaihoang, kieuanh, hihihaha;
 int main() {
   ios_base::sync_with_stdio(0);
   cin.tie(nullptr);
