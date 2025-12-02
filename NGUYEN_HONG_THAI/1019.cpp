@@ -2,23 +2,31 @@
 using namespace std;
 
 #define ll long long
+#define ld long double
 
 int main() {
-  ios::sync_with_stdio(0);
+  ios_base::sync_with_stdio(0);
   cin.tie(nullptr);
   cout.tie(nullptr);
 
-  ll n, q;
-  cin >> n >> q;
-  vector<ll> a(n + 1, 0);
-  for (ll i = 1; i <= n; i++) {
-    ll x;
-    cin >> x;
-    a[i] = a[i - 1] + x;
+  long long n;
+  cin >> n;
+
+  ld x = (sqrt(1 + 8.0L * n) - 1) / 2.0L;
+  ll k = ceil(x);
+
+  ll prev = (k - 1) * k / 2;
+  ll pos = n - prev;
+
+  ll p, q;
+
+  if (k % 2 == 1) {
+    p = k - pos + 1;
+    q = pos;
+  } else {
+    p = pos;
+    q = k - pos + 1;
   }
-  while (q--) {
-    ll l, r;
-    cin >> l >> r;
-    cout << a[r] - a[l - 1] << "\n";
-  }
+
+  cout << q << "/" << p;
 }
